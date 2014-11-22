@@ -4,7 +4,7 @@ Auro
 
 Formant analysis and vowel detection for iPhone in C/C++/Objective-C.
 
-Check blog for videos and information:
+For videos and information check first posts of this blog:
 
-auroproject.blogspot.com	(ENGLISH)
-proyectoauro.blogspot.com	(SPANISH)
+pedropinto.eu	(ENGLISH)
+pedropinto.es	(SPANISH)
