@@ -2,16 +2,14 @@ Auro
 
 ===========================================================================
 
-Para este proyecto he tomado el atlas de textura del personaje principal del juego Prince of Persia 2: The Shadow and the Flame (1993) y lo he animado, haciéndolo obedecer tres comandos de voz: “anda”, “gira” y “salta”.
+For this project, I took the texture atlas of the main character from the game Prince of Persia 2: The Shadow and the Flame (1993) and animated it, making it respond to three voice commands: 'walk,' 'turn,' and 'jump.'
 
-No he utilizado ninguna librería de reconocimiento de voz, todo el código está en el proyecto. Me he apoyado en el código fuente del programa AurioTouch de Apple, un clásico para todo el que quiera iniciarse en el procesamiento de señales, así como en las clases de ayuda en C++ de iPublicUtility, también de Apple.
+I didn't use any speech recognition library; all the code is in the project. I relied on the source code of Apple's AurioTouch program, a classic for anyone starting with signal processing, as well as on the C++ helper classes of iPublicUtility, also from Apple.
 
-El núcleo es un algoritmo de transformadas rápidas de Fourier rádix 4 en ensamblador (ha sido hermoso aprender a progamar en ensamblador). Para el análisis de los datos de entrada (obtención de formantes, etc.) he utilizado predicción lineal, gracias a la cual obtengo las 5 formantes de las vocales con una precisión bastante buena. Se me resisten ciertos sonidos vocálicos de las cerradas posteriores. Con las voces femeninas funciona mejor pero con las masculinas al programa le cuesta detectar las formantes de frecuencias bajas.
+The core is a radix-4 fast Fourier transform algorithm in assembly language (it's been beautiful learning to program in assembly). For the analysis of input data (obtaining formants, etc.), I used linear prediction, which allowed me to obtain the 5 formants of vowels with fairly good accuracy. Some back closed vowel sounds are challenging for me. It works better with female voices, but the program struggles to detect the low-frequency formants in male voices.
 
-He usado un iPhone 4 y, para el núcleo del algoritmo, el Accelerate Framework de Apple. He utilizado el algoritmo de Burg tal y como lo explica Cedrick Collomb y también he estudiado el código fuente del software de análisis de voz Praat para ciertas técnicas.
+I used an iPhone 4 and, for the core of the algorithm, Apple's Accelerate Framework. I followed Cedrick Collomb's explanation of the Burg algorithm and also studied the source code of the voice analysis software Praat for certain techniques.
 
-Combino las formantes F1 y F2 para obtener los resultados. He usado los valores medios para ambas formantes que da J. C. Catford en A Practical Introduction to Phonetics para ubicar las vocales.
+I combine formants F1 and F2 to obtain the results. I used the average values for both formants as provided by J. C. Catford in A Practical Introduction to Phonetics to locate the vowels.
 
-He probado la aplicación en la calle y demuestra ser bastante resistente al ruido, incluso al del tráfico.
-
-Pedro Pinto.
+I tested the application on the street, and it proves to be quite resilient to noise, even traffic noise.
